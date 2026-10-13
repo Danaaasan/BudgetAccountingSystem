@@ -1,0 +1,22 @@
+@model Account
+
+@{
+    ViewData["Title"] = "Счёт";
+}
+
+<div class="container py-4">
+    <div class="card shadow-sm rounded-4">
+        <div class="card-body">
+            <h2 class="mb-4">Счёт @Model.AccountNumber</h2>
+            <dl class="row">
+                <dt class="col-sm-3">ID</dt><dd class="col-sm-9">@Model.Id</dd>
+                <dt class="col-sm-3">Номер</dt><dd class="col-sm-9">@Model.AccountNumber</dd>
+                <dt class="col-sm-3">Тип</dt><dd class="col-sm-9">@Model.AccountType</dd>
+                <dt class="col-sm-3">Владелец (ID)</dt><dd class="col-sm-9">@Model.EmployeeId</dd>
+                <dt class="col-sm-3">Баланс</dt><dd class="col-sm-9 fw-bold">@Model.Balance @Model.Currency</dd>
+                <dt class="col-sm-3">Открыт</dt><dd class="col-sm-9">@Model.OpenedAt.ToString("dd.MM.yyyy")</dd>
+            </dl>
+            <a asp-action="Index" class="btn btn-secondary">Назад к списку</a>
+        </div>
+    </div>
+</div>

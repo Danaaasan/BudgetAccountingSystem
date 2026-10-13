@@ -1,0 +1,43 @@
+@model Account
+
+@{
+    ViewData["Title"] = "Открытие счёта";
+}
+
+<div class="container py-4">
+    <div class="card shadow-sm rounded-4" style="max-width: 600px;">
+        <div class="card-body">
+            <h2 class="mb-4">Открытие счёта</h2>
+            <form asp-action="Create" method="post">
+                <div class="mb-3">
+                    <label asp-for="AccountNumber" class="form-label">Номер счёта</label>
+                    <input asp-for="AccountNumber" class="form-control" />
+                    <span asp-validation-for="AccountNumber" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="EmployeeId" class="form-label">ID владельца</label>
+                    <input asp-for="EmployeeId" class="form-control" type="number" />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="AccountType" class="form-label">Тип счёта</label>
+                    <input asp-for="AccountType" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Balance" class="form-label">Баланс</label>
+                    <input asp-for="Balance" class="form-control" type="number" step="0.01" />
+                    <span asp-validation-for="Balance" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Currency" class="form-label">Валюта</label>
+                    <input asp-for="Currency" class="form-control" />
+                </div>
+                <div class="mb-3 form-check">
+                    <input asp-for="IsActive" class="form-check-input" />
+                    <label asp-for="IsActive" class="form-check-label">Активен</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Сохранить</button>
+                <a asp-action="Index" class="btn btn-secondary">Назад</a>
+            </form>
+        </div>
+    </div>
+</div>

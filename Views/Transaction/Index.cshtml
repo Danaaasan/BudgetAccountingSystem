@@ -1,0 +1,42 @@
+@model List<Transaction>
+
+@{
+    ViewData["Title"] = "Проводки";
+}
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1 class="fw-bold">Бухгалтерские проводки</h1>
+            <p class="text-muted">Всего: @Model.Count</p>
+        </div>
+        <a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Добавить</a>
+    </div>
+
+    <div class="card shadow-sm rounded-4">
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th><th>Дата</th><th>Тип</th><th>Дебет</th><th>Кредит</th><th>Сумма</th><th>Назначение</th><th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var t in Model)
+                    {
+                        <tr>
+                            <td>@t.Id</td>
+                            <td>@t.Date.ToString("dd.MM.yyyy")</td>
+                            <td><span class="badge bg-info text-dark">@t.Type</span></td>
+                            <td>@t.DebitAccount</td>
+                            <td>@t.CreditAccount</td>
+                            <td class="fw-bold">@t.Amount BYN</td>
+                            <td>@t.Description</td>
+                            <td><a asp-action="Details" asp-route-id="@t.Id" class="btn btn-sm btn-outline-primary">Подробнее</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

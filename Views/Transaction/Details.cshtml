@@ -1,0 +1,23 @@
+@model Transaction
+
+@{
+    ViewData["Title"] = "Проводка";
+}
+
+<div class="container py-4">
+    <div class="card shadow-sm rounded-4">
+        <div class="card-body">
+            <h2 class="mb-4">Проводка №@Model.Id</h2>
+            <dl class="row">
+                <dt class="col-sm-3">Дата</dt><dd class="col-sm-9">@Model.Date.ToString("dd.MM.yyyy")</dd>
+                <dt class="col-sm-3">Тип</dt><dd class="col-sm-9">@Model.Type</dd>
+                <dt class="col-sm-3">Дебет</dt><dd class="col-sm-9">@Model.DebitAccount</dd>
+                <dt class="col-sm-3">Кредит</dt><dd class="col-sm-9">@Model.CreditAccount</dd>
+                <dt class="col-sm-3">Сумма</dt><dd class="col-sm-9 fw-bold">@Model.Amount BYN</dd>
+                <dt class="col-sm-3">Назначение</dt><dd class="col-sm-9">@Model.Description</dd>
+                <dt class="col-sm-3">Счёт (ID)</dt><dd class="col-sm-9">@Model.AccountId</dd>
+            </dl>
+            <a asp-action="Index" class="btn btn-secondary">Назад к списку</a>
+        </div>
+    </div>
+</div>

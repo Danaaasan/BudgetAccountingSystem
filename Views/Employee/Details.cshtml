@@ -1,0 +1,32 @@
+@model Employee
+
+@{
+    ViewData["Title"] = "Подробности";
+}
+
+<div class="container py-4">
+    <div class="card shadow-sm rounded-4">
+        <div class="card-body">
+            <h2 class="mb-4">Информация о сотруднике</h2>
+            <dl class="row">
+                <dt class="col-sm-3">ID</dt><dd class="col-sm-9">@Model.Id</dd>
+                <dt class="col-sm-3">ФИО</dt><dd class="col-sm-9">@Model.FullName</dd>
+                <dt class="col-sm-3">Должность</dt><dd class="col-sm-9">@Model.Position</dd>
+                <dt class="col-sm-3">Отдел</dt><dd class="col-sm-9">@Model.Department</dd>
+                <dt class="col-sm-3">Оклад</dt><dd class="col-sm-9">@Model.Salary BYN</dd>
+                <dt class="col-sm-3">Статус</dt>
+                <dd class="col-sm-9">
+                    @if (Model.IsActive)
+                    {
+                        <span class="badge bg-success">Активен</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-danger">Неактивен</span>
+                    }
+                </dd>
+            </dl>
+            <a asp-action="Index" class="btn btn-secondary">Назад к списку</a>
+        </div>
+    </div>
+</div>

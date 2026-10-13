@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Главная";
+}
+
+<div class="container py-5 text-center">
+    <h1 class="display-4 fw-bold">АИС Бюджетного Учёта</h1>
+    <p class="lead text-muted">Система управления бюджетным учреждением</p>
+    <div class="d-flex justify-content-center gap-3 mt-4">
+        <a asp-controller="Employee" asp-action="Index" class="btn btn-primary btn-lg">Сотрудники</a>
+        <a asp-controller="Account" asp-action="Index" class="btn btn-outline-primary btn-lg">Счета</a>
+        <a asp-controller="Transaction" asp-action="Index" class="btn btn-outline-primary btn-lg">Проводки</a>
+    </div>
+</div>

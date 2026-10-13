@@ -1,0 +1,43 @@
+@model List<Account>
+
+@{
+    ViewData["Title"] = "Счета";
+}
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1 class="fw-bold">Лицевые счета</h1>
+            <p class="text-muted">Всего: @Model.Count</p>
+        </div>
+        <a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Открыть счёт</a>
+    </div>
+
+    <div class="row g-4">
+        @foreach (var acc in Model)
+        {
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm rounded-4">
+                    <div class="card-body">
+                        <span class="badge bg-secondary mb-2">ID: @acc.Id</span>
+                        @if (acc.IsActive)
+                        {
+                            <span class="badge bg-success mb-2">Активен</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-danger mb-2">Закрыт</span>
+                        }
+                        <h5 class="card-title">Счёт @acc.AccountNumber</h5>
+                        <p class="text-muted mb-2">Тип: @acc.AccountType</p>
+                        <p class="fs-4 fw-bold">@acc.Balance @acc.Currency</p>
+                        <div class="d-flex gap-2">
+                            <a asp-action="Details" asp-route-id="@acc.Id" class="btn btn-outline-primary btn-sm">Подробнее</a>
+                            <a asp-action="Edit" asp-route-id="@acc.Id" class="btn btn-outline-secondary btn-sm">Ред.</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
