@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "GXh0TKOjMXw=",
+  "dgSpecHash": "FWz0Xkxwwqc=",
   "success": true,
   "projectFilePath": "/Users/dana_o_san/Documents/4 курс/дипломчек/курсовая МОЯ/BudgetAccountingSystem/BudgetAccountingSystem.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/dana_o_san/.nuget/packages/microsoft.netcore.app.ref/8.0.31/microsoft.netcore.app.ref.8.0.31.nupkg.sha512",
+    "/Users/dana_o_san/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.31/microsoft.aspnetcore.app.ref.8.0.31.nupkg.sha512",
+    "/Users/dana_o_san/.nuget/packages/microsoft.netcore.app.host.osx-arm64/8.0.31/microsoft.netcore.app.host.osx-arm64.8.0.31.nupkg.sha512"
+  ],
   "logs": []
 }
