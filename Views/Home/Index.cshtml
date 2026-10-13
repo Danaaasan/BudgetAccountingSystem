@@ -2,12 +2,94 @@
     ViewData["Title"] = "Главная";
 }
 
-<div class="container py-5 text-center">
-    <h1 class="display-4 fw-bold">АИС Бюджетного Учёта</h1>
-    <p class="lead text-muted">Система управления бюджетным учреждением</p>
-    <div class="d-flex justify-content-center gap-3 mt-4">
-        <a asp-controller="Employee" asp-action="Index" class="btn btn-primary btn-lg">Сотрудники</a>
-        <a asp-controller="Account" asp-action="Index" class="btn btn-outline-primary btn-lg">Счета</a>
-        <a asp-controller="Transaction" asp-action="Index" class="btn btn-outline-primary btn-lg">Проводки</a>
+<!-- Hero -->
+<section class="hero">
+    <h1>АИС обеспечения <span>бухгалтерско-экономической</span> деятельности</h1>
+    <p>Автоматизация учёта, планирования и формирования отчётности для предприятий бюджетной сферы. Единое окно для бухгалтера, экономиста и руководителя.</p>
+    <div class="d-flex justify-content-center gap-3 flex-wrap">
+        <a asp-controller="Employee" asp-action="Index" class="btn btn-primary">
+            <i class="bi bi-people"></i> Сотрудники
+        </a>
+        <a asp-controller="Account" asp-action="Index" class="btn btn-secondary">
+            <i class="bi bi-wallet2"></i> Счета
+        </a>
+        <a asp-controller="Transaction" asp-action="Index" class="btn btn-secondary">
+            <i class="bi bi-arrow-left-right"></i> Проводки
+        </a>
     </div>
-</div>
+</section>
+
+<!-- Дашборд -->
+<section class="container pb-5">
+    <div class="dashboard-grid">
+        <div class="stat-card">
+            <div class="stat-title">Бюджетные ассигнования</div>
+            <div class="stat-value purple">1 245 000 BYN</div>
+            <div class="stat-subtitle">▲ 12% к прошлому кварталу</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-title">Кассовые расходы</div>
+            <div class="stat-value red">987 500 BYN</div>
+            <div class="stat-subtitle">▼ 3% от плана</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-title">Кредиторская задолженность</div>
+            <div class="stat-value">45 200 BYN</div>
+            <div class="stat-subtitle warn">Требует внимания</div>
+        </div>
+    </div>
+
+    <!-- Таблица последних операций -->
+    <div class="table-container">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2 class="mb-0" style="font-size: 1.3rem;">Последние операции</h2>
+            <a asp-controller="Transaction" asp-action="Index" style="font-size: 0.95rem;">Все операции →</a>
+        </div>
+        <table class="table table-hover mb-0">
+            <thead>
+                <tr>
+                    <th>Дата</th>
+                    <th>Документ</th>
+                    <th>Дебет</th>
+                    <th>Кредит</th>
+                    <th>Сумма</th>
+                    <th>Статус</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>14.10.2026</td>
+                    <td>Платёжное поручение №451</td>
+                    <td>302.11</td>
+                    <td>201.11</td>
+                    <td>15 000 BYN</td>
+                    <td><span class="badge bg-success">Проведён</span></td>
+                </tr>
+                <tr>
+                    <td>14.10.2026</td>
+                    <td>Акт выполненных работ №12</td>
+                    <td>401.20</td>
+                    <td>302.21</td>
+                    <td>8 500 BYN</td>
+                    <td><span class="badge bg-success">Проведён</span></td>
+                </tr>
+                <tr>
+                    <td>13.10.2026</td>
+                    <td>Требование-накладная №89</td>
+                    <td>105.36</td>
+                    <td>101.36</td>
+                    <td>2 300 BYN</td>
+                    <td><span class="badge bg-danger">Черновик</span></td>
+                </tr>
+                <tr>
+                    <td>13.10.2026</td>
+                    <td>Начисление заработной платы</td>
+                    <td>401.20</td>
+                    <td>302.11</td>
+                    <td>145 000 BYN</td>
+                    <td><span class="badge bg-success">Проведён</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
